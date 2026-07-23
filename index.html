@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>awesome-neobank · the neobank builder's catalog</title>
+<meta name="description" content="A curated catalog of the tools and services used to build a neobank: full-stack solutions, BaaS, ledgers, cards, KYC, ramps, stablecoins, and more.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f2e9;
+    --paper-raised: #fbf8f1;
+    --ink: #1c1913;
+    --ink-soft: #57503f;
+    --rule: #d9d1bd;
+    --rule-strong: #b9ae92;
+    --green: #0d5c39;
+    --green-bright: #1d8a56;
+    --green-wash: #e4ede2;
+    --amber: #b4530a;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --sans: "IBM Plex Sans", ui-sans-serif, sans-serif;
+    --display: "Fraunces", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14120d;
+      --paper-raised: #1c1912;
+      --ink: #ece5d3;
+      --ink-soft: #a89e86;
+      --rule: #322d21;
+      --rule-strong: #4d452f;
+      --green: #35b578;
+      --green-bright: #4fd394;
+      --green-wash: #1a2b1f;
+      --amber: #e08a45;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 31px, color-mix(in srgb, var(--rule) 34%, transparent) 32px);
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- header ---------- */
+  header { border-bottom: 1px solid var(--rule-strong); padding: 44px 0 28px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--green);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  }
+  .eyebrow a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+  .eyebrow a:hover { color: var(--green); border-color: var(--green); }
+  h1 {
+    font-family: var(--display); font-weight: 600; font-size: clamp(34px, 6vw, 58px);
+    line-height: 1.04; margin: 18px 0 12px; letter-spacing: -.01em; max-width: 17ch;
+  }
+  h1 em { font-style: italic; color: var(--green); }
+  .lede { color: var(--ink-soft); max-width: 62ch; font-size: 15.5px; }
+  .stats { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin-top: 18px; display: flex; gap: 22px; flex-wrap: wrap; }
+  .stats b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- filter bar ---------- */
+  .filters {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+  }
+  .filter-rows { display: flex; flex-direction: column; gap: 10px; }
+  .row-1 { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .search {
+    flex: 1 1 220px; max-width: 340px;
+    font-family: var(--mono); font-size: 13px;
+    padding: 8px 12px; color: var(--ink);
+    background: var(--paper-raised);
+    border: 1px solid var(--rule-strong); border-radius: 2px;
+  }
+  .search::placeholder { color: var(--ink-soft); }
+  .search:focus { outline: 2px solid var(--green); outline-offset: -1px; }
+  select {
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink);
+    padding: 8px 10px; background: var(--paper-raised);
+    border: 1px solid var(--rule-strong); border-radius: 2px;
+  }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--mono); font-size: 12px; cursor: pointer;
+    padding: 5px 11px; border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: transparent; color: var(--ink-soft);
+    transition: all .13s ease;
+  }
+  .chip:hover { border-color: var(--green); color: var(--green); }
+  .chip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--paper); }
+  .chip .n { opacity: .65; margin-left: 4px; }
+
+  /* ---------- results ---------- */
+  main { padding: 26px 0 60px; }
+  .count-line {
+    font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: .12em; margin-bottom: 18px;
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .cat-blurb { font-size: 13.5px; color: var(--ink-soft); margin: -10px 0 18px; max-width: 70ch; font-style: italic; font-family: var(--display); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .card {
+    display: flex; flex-direction: column; gap: 8px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule); border-radius: 3px;
+    padding: 16px 18px 14px;
+    animation: rise .35s ease both;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { border-color: var(--rule-strong); transform: translateY(-2px); box-shadow: 0 6px 18px -8px rgba(28,25,19,.25); }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .card:nth-child(-n+18) { animation-delay: calc(var(--i, 0) * 28ms); }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .card-head h3 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+  .card-head h3 a { text-decoration: none; }
+  .card-head h3 a:hover { color: var(--green); }
+  .domain { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
+  .desc { font-size: 13.5px; color: var(--ink-soft); flex: 1; }
+  .card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 2px; }
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 2px; padding: 1px 6px;
+    background: transparent; cursor: pointer;
+  }
+  .tag:hover { color: var(--green); border-color: var(--green); }
+  .docs-link {
+    font-family: var(--mono); font-size: 11.5px; color: var(--green);
+    text-decoration: none; border-bottom: 1px solid transparent; white-space: nowrap;
+  }
+  .docs-link:hover { border-color: var(--green); }
+
+  /* featured card */
+  .card.featured { background: var(--green); border-color: var(--green); color: var(--paper); grid-column: 1 / -1; }
+  @media (prefers-color-scheme: dark) { .card.featured { color: #0e1b13; } }
+  .card.featured .desc, .card.featured .domain, .card.featured .tag { color: inherit; opacity: .85; }
+  .card.featured .tag { border-color: color-mix(in srgb, currentColor 40%, transparent); }
+  .card.featured .card-foot { border-top-color: color-mix(in srgb, currentColor 30%, transparent); }
+  .card.featured .docs-link { color: inherit; font-weight: 500; }
+  .card.featured .badge {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+    border: 1px solid color-mix(in srgb, currentColor 50%, transparent); border-radius: 999px; padding: 2px 9px;
+  }
+  .card.featured h3 { font-family: var(--display); font-size: 21px; }
+  .card.featured h3 a:hover { color: inherit; text-decoration: underline; }
+
+  .empty { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); padding: 60px 0; text-align: center; }
+  .empty button { font-family: var(--mono); background: none; border: none; color: var(--green); cursor: pointer; text-decoration: underline; font-size: 13px; }
+
+  footer { border-top: 1px solid var(--rule-strong); padding: 26px 0 48px; font-size: 13px; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+  footer a:hover { color: var(--green); border-color: var(--green); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">
+      <span>awesome-neobank · a builder's index</span>
+      <a href="https://github.com/JamesLawton/awesome-neobank">github.com/JamesLawton/awesome-neobank →</a>
+    </div>
+    <h1>Every tool you need to <em>build a neobank</em>.</h1>
+    <p class="lede">An aggregated catalog of the infrastructure behind modern money apps: full-stack platforms, banking-as-a-service, ledgers, cards, KYC, ramps, stablecoins, and settlement rails. Filter by layer, region, or rail type.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="filters">
+  <div class="wrap filter-rows">
+    <div class="row-1">
+      <input class="search" id="q" type="search" placeholder="search providers…" aria-label="Search providers">
+      <select id="type" aria-label="Rail type">
+        <option value="">all rails</option>
+        <option value="fiat">fiat</option>
+        <option value="stablecoin">stablecoin</option>
+        <option value="crypto">crypto</option>
+      </select>
+      <select id="region" aria-label="Region">
+        <option value="">all regions</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Category filters"></div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="count-line"><span id="count"></span><span id="active-cat"></span></div>
+    <p class="cat-blurb" id="blurb" hidden></p>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>no providers match. <button id="reset">reset filters</button></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Seeded from <a href="https://www.neobank.build/providers">neobank.build</a>, expanded and re-categorized. Not an endorsement; verify licensing and coverage yourself.</span>
+    <span>Missing something? <a href="https://github.com/JamesLawton/awesome-neobank/edit/main/data.js">Open a PR</a>.</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const grid = document.getElementById("grid");
+  const chipsEl = document.getElementById("chips");
+  const q = document.getElementById("q");
+  const typeSel = document.getElementById("type");
+  const regionSel = document.getElementById("region");
+  const countEl = document.getElementById("count");
+  const activeCatEl = document.getElementById("active-cat");
+  const blurbEl = document.getElementById("blurb");
+  const emptyEl = document.getElementById("empty");
+  const statsEl = document.getElementById("stats");
+
+  const TYPE_TAGS = new Set(["fiat", "crypto", "stablecoin"]);
+  const state = { cat: "", q: "", type: "", region: "" };
+
+  // hydrate from URL
+  const params = new URLSearchParams(location.search);
+  state.cat = params.get("cat") || "";
+  state.q = params.get("q") || "";
+  state.type = params.get("type") || "";
+  state.region = params.get("region") || "";
+  q.value = state.q;
+  typeSel.value = state.type;
+
+  const regions = [...new Set(PROVIDERS.flatMap(p => p.tags.filter(t => !TYPE_TAGS.has(t))))].sort();
+  for (const r of regions) {
+    const o = document.createElement("option");
+    o.value = r; o.textContent = r;
+    regionSel.appendChild(o);
+  }
+  regionSel.value = state.region;
+
+  statsEl.innerHTML = `<span><b>${PROVIDERS.length}</b> providers</span><span><b>${CATEGORIES.length}</b> categories</span><span>updated <b>July 2026</b></span>`;
+
+  function catCount(id) { return PROVIDERS.filter(p => p.categories.includes(id)).length; }
+
+  function renderChips() {
+    chipsEl.innerHTML = "";
+    const all = document.createElement("button");
+    all.className = "chip";
+    all.textContent = "all";
+    all.setAttribute("aria-pressed", state.cat === "");
+    all.onclick = () => { state.cat = ""; sync(); };
+    chipsEl.appendChild(all);
+    for (const c of CATEGORIES) {
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.innerHTML = `${c.label.toLowerCase()}<span class="n">${catCount(c.id)}</span>`;
+      b.setAttribute("aria-pressed", state.cat === c.id);
+      b.onclick = () => { state.cat = state.cat === c.id ? "" : c.id; sync(); };
+      chipsEl.appendChild(b);
+    }
+  }
+
+  function matches(p) {
+    if (state.cat && !p.categories.includes(state.cat)) return false;
+    if (state.type && !p.tags.includes(state.type)) return false;
+    if (state.region && !p.tags.includes(state.region)) return false;
+    if (state.q) {
+      const hay = (p.name + " " + p.description + " " + p.url + " " + p.categories.join(" ")).toLowerCase();
+      if (!hay.includes(state.q.toLowerCase())) return false;
+    }
+    return true;
+  }
+
+  function domain(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } }
+  function esc(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  function render() {
+    const rows = PROVIDERS.filter(matches).sort((a, b) =>
+      (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || a.name.localeCompare(b.name));
+    grid.innerHTML = "";
+    rows.forEach((p, i) => {
+      const card = document.createElement("article");
+      card.className = "card" + (p.featured ? " featured" : "");
+      card.style.setProperty("--i", i);
+      const cats = p.categories.map(id => {
+        const c = CATEGORIES.find(c => c.id === id);
+        return `<button class="tag" data-cat="${id}">${c ? c.label.toLowerCase() : id}</button>`;
+      }).join("");
+      card.innerHTML = `
+        <div class="card-head">
+          <h3><a href="${p.url}" target="_blank" rel="noopener">${esc(p.name)}</a></h3>
+          ${p.featured ? '<span class="badge">featured</span>' : `<span class="domain">${domain(p.url)}</span>`}
+        </div>
+        <p class="desc">${esc(p.description)}</p>
+        <div class="card-foot">
+          <div class="tags">${cats}</div>
+          ${p.docs ? `<a class="docs-link" href="${p.docs}" target="_blank" rel="noopener">docs →</a>` : ""}
+        </div>`;
+      grid.appendChild(card);
+    });
+    grid.querySelectorAll(".tag").forEach(t =>
+      t.addEventListener("click", () => { state.cat = t.dataset.cat; sync(); window.scrollTo({ top: 0 }); }));
+    countEl.textContent = `showing ${rows.length} of ${PROVIDERS.length}`;
+    const cat = CATEGORIES.find(c => c.id === state.cat);
+    activeCatEl.textContent = cat ? cat.label : "all categories";
+    blurbEl.hidden = !cat;
+    if (cat) blurbEl.textContent = cat.blurb;
+    emptyEl.hidden = rows.length > 0;
+  }
+
+  function sync() {
+    const p = new URLSearchParams();
+    if (state.cat) p.set("cat", state.cat);
+    if (state.q) p.set("q", state.q);
+    if (state.type) p.set("type", state.type);
+    if (state.region) p.set("region", state.region);
+    history.replaceState(null, "", p.toString() ? "?" + p.toString() : location.pathname);
+    renderChips();
+    render();
+  }
+
+  q.addEventListener("input", () => { state.q = q.value.trim(); sync(); });
+  typeSel.addEventListener("change", () => { state.type = typeSel.value; sync(); });
+  regionSel.addEventListener("change", () => { state.region = regionSel.value; sync(); });
+  document.getElementById("reset").onclick = () => {
+    state.cat = state.q = state.type = state.region = "";
+    q.value = ""; typeSel.value = ""; regionSel.value = "";
+    sync();
+  };
+
+  sync();
+})();
+</script>
+</body>
+</html>
