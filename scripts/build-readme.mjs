@@ -25,7 +25,7 @@ lines.push("");
 for (const c of CATEGORIES) {
   const rows = PROVIDERS
     .filter(p => p.categories.includes(c.id))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || a.name.localeCompare(b.name));
   lines.push(`## ${c.label}`);
   lines.push("");
   lines.push(`> ${c.blurb}`);
