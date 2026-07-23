@@ -1,6 +1,6 @@
 // awesome-neobank provider data
 // Sources: neobank.build/providers (seed) + independent research, July 2026.
-// Schema: name, url, docs (optional), description, categories[], tags[], featured (optional)
+// Schema: name, url, docs (optional), description, categories[], tags[]
 
 const CATEGORIES = [
   { id: "full-stack", label: "Full-stack solutions", blurb: "Vertically integrated platforms: accounts, ramps, compliance, cards, and settlement behind one API." },
@@ -23,7 +23,7 @@ const CATEGORIES = [
 
 const PROVIDERS = [
   // ---- Full-stack solutions ----
-  { name: "Open Money Stack", url: "https://polygon.technology", docs: "https://docs.polygon.technology/oms/overview", description: "Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.", categories: ["full-stack"], tags: ["stablecoin", "global"], featured: true },
+  { name: "Open Money Stack", url: "https://polygon.technology", docs: "https://docs.polygon.technology/oms/overview", description: "Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.", categories: ["full-stack"], tags: ["stablecoin", "global"] },
   { name: "Bridge", url: "https://bridge.xyz", docs: "https://apidocs.bridge.xyz", description: "Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.", categories: ["full-stack", "virtual-accounts", "ramps", "stablecoins", "cards"], tags: ["stablecoin", "US", "global"] },
   { name: "BVNK", url: "https://bvnk.com", docs: "https://docs.bvnk.com", description: "Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.", categories: ["full-stack", "virtual-accounts", "ramps", "stablecoins"], tags: ["stablecoin", "EU", "UK", "global"] },
   { name: "Zero Hash", url: "https://zerohash.com", docs: "https://docs.zerohash.com", description: "Regulated crypto and stablecoin infrastructure: custody, trading, ramps, and payouts.", categories: ["full-stack", "custody", "ramps"], tags: ["crypto", "stablecoin", "US", "global"] },

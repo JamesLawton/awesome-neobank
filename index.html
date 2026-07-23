@@ -25,20 +25,6 @@
     --sans: "IBM Plex Sans", ui-sans-serif, sans-serif;
     --display: "Fraunces", Georgia, serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #14120d;
-      --paper-raised: #1c1912;
-      --ink: #ece5d3;
-      --ink-soft: #a89e86;
-      --rule: #322d21;
-      --rule-strong: #4d452f;
-      --green: #35b578;
-      --green-bright: #4fd394;
-      --green-wash: #1a2b1f;
-      --amber: #e08a45;
-    }
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -144,20 +130,6 @@
     text-decoration: none; border-bottom: 1px solid transparent; white-space: nowrap;
   }
   .docs-link:hover { border-color: var(--green); }
-
-  /* featured card */
-  .card.featured { background: var(--green); border-color: var(--green); color: var(--paper); grid-column: 1 / -1; }
-  @media (prefers-color-scheme: dark) { .card.featured { color: #0e1b13; } }
-  .card.featured .desc, .card.featured .domain, .card.featured .tag { color: inherit; opacity: .85; }
-  .card.featured .tag { border-color: color-mix(in srgb, currentColor 40%, transparent); }
-  .card.featured .card-foot { border-top-color: color-mix(in srgb, currentColor 30%, transparent); }
-  .card.featured .docs-link { color: inherit; font-weight: 500; }
-  .card.featured .badge {
-    font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-    border: 1px solid color-mix(in srgb, currentColor 50%, transparent); border-radius: 999px; padding: 2px 9px;
-  }
-  .card.featured h3 { font-family: var(--display); font-size: 21px; }
-  .card.featured h3 a:hover { color: inherit; text-decoration: underline; }
 
   .empty { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); padding: 60px 0; text-align: center; }
   .empty button { font-family: var(--mono); background: none; border: none; color: var(--green); cursor: pointer; text-decoration: underline; font-size: 13px; }
@@ -287,12 +259,11 @@
   function esc(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
 
   function render() {
-    const rows = PROVIDERS.filter(matches).sort((a, b) =>
-      (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || a.name.localeCompare(b.name));
+    const rows = PROVIDERS.filter(matches).sort((a, b) => a.name.localeCompare(b.name));
     grid.innerHTML = "";
     rows.forEach((p, i) => {
       const card = document.createElement("article");
-      card.className = "card" + (p.featured ? " featured" : "");
+      card.className = "card";
       card.style.setProperty("--i", i);
       const cats = p.categories.map(id => {
         const c = CATEGORIES.find(c => c.id === id);
@@ -301,7 +272,7 @@
       card.innerHTML = `
         <div class="card-head">
           <h3><a href="${p.url}" target="_blank" rel="noopener">${esc(p.name)}</a></h3>
-          ${p.featured ? '<span class="badge">featured</span>' : `<span class="domain">${domain(p.url)}</span>`}
+          <span class="domain">${domain(p.url)}</span>
         </div>
         <p class="desc">${esc(p.description)}</p>
         <div class="card-foot">
