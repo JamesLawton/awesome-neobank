@@ -4,7 +4,7 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 
 **Browse with filters: [jameslawton.github.io/awesome-neobank](https://jameslawton.github.io/awesome-neobank/)**
 
-245 providers across 16 categories. Seeded from [neobank.build](https://www.neobank.build/providers), expanded and re-categorized with independent research. Inclusion is not an endorsement; verify licensing and coverage yourself.
+251 providers across 16 categories. Seeded from [neobank.build](https://www.neobank.build/providers), expanded and re-categorized with independent research. Inclusion is not an endorsement; verify licensing and coverage yourself.
 
 ## Contents
 
@@ -29,15 +29,14 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 
 > Vertically integrated platforms: accounts, ramps, compliance, cards, and settlement behind one API.
 
+- [Open Money Stack](https://polygon.technology) ([docs](https://docs.polygon.technology/oms/overview)) - Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.
 - [Altitude](https://altitude.xyz) - Self-custodial digital asset accounts with compliance, ramps, cards, and rewards.
-- [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [BVNK](https://bvnk.com) ([docs](https://docs.bvnk.com)) - Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.
 - [Crossmint](https://crossmint.com) ([docs](https://docs.crossmint.com)) - Wallets, stablecoin ramps, cards, and built-in compliance in one API.
 - [Dakota](https://dakota.xyz) ([docs](https://docs.dakota.xyz)) - Business banking on stablecoin and treasury rails: accounts, payments, and cards.
 - [Fern](https://fernhq.com) ([docs](https://docs.fernhq.com)) - Onramps, offramps, FX, and multi-currency accounts in one API; part of Rain.
 - [FV Bank](https://fvbank.us) - Licensed US bank with API banking, digital asset custody, and stablecoin payments.
 - [Mural Pay](https://muralpay.com) ([docs](https://developers.muralpay.com)) - Named USD and EUR virtual accounts, stablecoin payouts, and compliance APIs.
-- [Open Money Stack](https://polygon.technology) ([docs](https://docs.polygon.technology/oms/overview)) - Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.
 - [Rain](https://rain.xyz) - Visa principal member issuing stablecoin-funded cards in 150+ countries; acquired Fern.
 - [Squads Grid](https://squads.xyz) ([docs](https://grid.squads.xyz)) - Stablecoin accounts, payments, cards, and yield APIs built on Solana.
 - [Stripe](https://stripe.com) - Payments platform with stablecoin accounts, card issuing, Bridge, and Privy.
@@ -91,7 +90,6 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Adyen](https://adyen.com) - Enterprise card issuing unified with acquiring and banking infrastructure.
 - [Altitude](https://altitude.xyz) - Self-custodial digital asset accounts with compliance, ramps, cards, and rewards.
 - [Based App](https://based.one) - Visa debit card and account with automatic stablecoin conversion.
-- [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [Enfuce](https://enfuce.com) - Cloud-native issuer processor with EU and UK licenses and BIN sponsorship.
 - [Episode Six](https://episodesix.com) - Ledger and card infrastructure for banks and fintechs.
 - [Galileo](https://galileo-ft.com) - SoFi-owned API platform for card issuing, processing, and program management.
@@ -167,6 +165,8 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Method](https://methodfi.com) - Consumer liability connectivity and payments across 15,000+ institutions.
 - [Modern Treasury](https://moderntreasury.com) - Payment operations and ledgers unifying bank rails and stablecoins (acquired Beam).
 - [Moov](https://moov.io) - Money movement spanning ACH, RTP, card acquiring, and issuing.
+- [OMS Onramps & Offramps](https://docs.polygon.technology/payments/onramps-offramps) - Card-funded pay-ins and crypto-to-fiat payouts with quotes and transactions.
+- [Polygon Agentic Payments](https://docs.polygon.technology/payment-services/agentic-payments/x402/guides/quickstart-buyers) - Machine-to-machine payments over HTTP using the x402 standard.
 - [Rapyd](https://rapyd.net) - Global payment collection, disbursement, and wallet infrastructure.
 - [Sila](https://silamoney.com) - Money API for ACH, instant settlement, and wallet infrastructure.
 - [Stripe](https://stripe.com) - Payments platform with stablecoin accounts, card issuing, Bridge, and Privy.
@@ -179,7 +179,6 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Airwallex](https://airwallex.com) - Global business accounts, FX conversion, and cross-border payouts.
 - [Altitude](https://altitude.xyz) - Self-custodial digital asset accounts with compliance, ramps, cards, and rewards.
 - [Brale](https://brale.xyz) ([docs](https://docs.brale.xyz)) - Stablecoin issuance platform with virtual accounts and ramps.
-- [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [BVNK](https://bvnk.com) ([docs](https://docs.bvnk.com)) - Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.
 - [Conduit](https://conduitpay.com) - Multicurrency virtual accounts and stablecoin cross-border payments.
 - [Currencycloud](https://currencycloud.com) - Multi-currency wallets and FX infrastructure, part of Visa.
@@ -194,6 +193,7 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Mural Pay](https://muralpay.com) ([docs](https://developers.muralpay.com)) - Named USD and EUR virtual accounts, stablecoin payouts, and compliance APIs.
 - [Noah](https://noah.com) - Global accounts and stablecoin payment rails.
 - [Noxxo](https://noxxo.com) - Virtual account infrastructure.
+- [OMS Virtual Accounts](https://docs.polygon.technology/oms/overview) - Named virtual accounts for recurring bank deposits, in early access.
 - [OpenPayd](https://openpayd.com) - Embedded finance platform with IBANs and payment rails.
 - [PhotonPay](https://photonpay.com) - Global accounts and card issuing from Hong Kong.
 - [Tazapay](https://tazapay.com) - Cross-border payments and collections across Asia-Pacific.
@@ -215,7 +215,6 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Blockchain.com](https://blockchain.com) - Wallet and exchange with on-ramp APIs.
 - [BoomFi](https://boomfi.xyz) - Crypto payments and light-KYC ramps.
 - [Brale](https://brale.xyz) ([docs](https://docs.brale.xyz)) - Stablecoin issuance platform with virtual accounts and ramps.
-- [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [BTC Direct](https://btcdirect.eu) - European crypto on-ramp.
 - [BVNK](https://bvnk.com) ([docs](https://docs.bvnk.com)) - Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.
 - [Circle](https://circle.com) - USDC and EURC issuer with programmable wallets, contracts, and CCTP.
@@ -256,6 +255,8 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Mural Pay](https://muralpay.com) ([docs](https://developers.muralpay.com)) - Named USD and EUR virtual accounts, stablecoin payouts, and compliance APIs.
 - [NALA Rafiki](https://rafiki.com) - Payment rails into East Africa from NALA.
 - [Noah](https://noah.com) - Global accounts and stablecoin payment rails.
+- [OMS Cash In](https://docs.polygon.technology/api-reference/guide-cash-in) - In-person USD deposits at retail cash locations via deposit codes.
+- [OMS Onramps & Offramps](https://docs.polygon.technology/payments/onramps-offramps) - Card-funded pay-ins and crypto-to-fiat payouts with quotes and transactions.
 - [Onmeta](https://onmeta.in) - INR on and off ramps for India.
 - [Onramp Money](https://onramp.money) - India-focused fiat-crypto funding.
 - [Onramper](https://onramper.com) - Fiat-to-crypto aggregator with 30+ onramps and 175+ payment methods.
@@ -346,6 +347,8 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Fuze](https://fuze.finance) - Digital asset infrastructure for MENA banks and fintechs.
 - [FV Bank](https://fvbank.us) - Licensed US bank with API banking, digital asset custody, and stablecoin payments.
 - [Magic](https://magic.link) - Email-login embedded wallets.
+- [OMS Custodial Wallets](https://docs.polygon.technology/api-reference/overview) - KYC'd customers, custodial wallets, and balances via the OMS API.
+- [OMS Wallet SDK](https://docs.polygon.technology/wallets/quickstart) - Non-custodial embedded wallets with email sign-in, branded as your app.
 - [Para](https://getpara.com) - Embedded wallets that work across apps and chains.
 - [Payy](https://payy.network) - Non-custodial stablecoin wallet on an Ethereum-secured ZK L2.
 - [Phantom](https://phantom.com) - Self-custodial wallet with Phantom Cash and CASH stablecoin.
@@ -373,7 +376,6 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Bastion](https://bastion.com) - NYDFS-chartered wallet and stablecoin issuance infrastructure.
 - [BiLira](https://bilira.co) - Turkish lira stablecoin (TRYB) and local ramps.
 - [Brale](https://brale.xyz) ([docs](https://docs.brale.xyz)) - Stablecoin issuance platform with virtual accounts and ramps.
-- [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [BVNK](https://bvnk.com) ([docs](https://docs.bvnk.com)) - Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.
 - [Circle](https://circle.com) - USDC and EURC issuer with programmable wallets, contracts, and CCTP.
 - [Ethena](https://ethena.fi) - Synthetic dollar USDe with native yield.
@@ -431,6 +433,7 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Router Protocol](https://routerprotocol.com) - Cross-chain routing infrastructure.
 - [Socket](https://socket.tech) - Unified cross-chain routing protocol.
 - [Squid](https://squidrouter.com) - Cross-chain swap router built on Axelar.
+- [Trails](https://trails.build) ([docs](https://docs.polygon.technology/cross-chain)) - Cross-chain payments, swaps, bridging, and deposits behind one API.
 - [Tria](https://tria.so) - Chain-abstracted accounts and intent routing (BestPath AVS).
 - [Wormhole](https://wormhole.com) - Cross-chain messaging and bridging.
 

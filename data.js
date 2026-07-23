@@ -1,6 +1,6 @@
 // awesome-neobank provider data
 // Sources: neobank.build/providers (seed) + independent research, July 2026.
-// Schema: name, url, docs (optional), description, categories[], tags[]
+// Schema: name, url, docs (optional), description, categories[], tags[], pinned (optional: sorts first)
 
 const CATEGORIES = [
   { id: "full-stack", label: "Full-stack solutions", blurb: "Vertically integrated platforms: accounts, ramps, compliance, cards, and settlement behind one API." },
@@ -23,8 +23,15 @@ const CATEGORIES = [
 
 const PROVIDERS = [
   // ---- Full-stack solutions ----
-  { name: "Open Money Stack", url: "https://polygon.technology", docs: "https://docs.polygon.technology/oms/overview", description: "Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.", categories: ["full-stack"], tags: ["stablecoin", "global"] },
-  { name: "Bridge", url: "https://bridge.xyz", docs: "https://apidocs.bridge.xyz", description: "Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.", categories: ["full-stack", "virtual-accounts", "ramps", "stablecoins", "cards"], tags: ["stablecoin", "US", "global"] },
+  { name: "Open Money Stack", url: "https://polygon.technology", docs: "https://docs.polygon.technology/oms/overview", description: "Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.", categories: ["full-stack"], tags: ["stablecoin", "global"], pinned: true },
+  // Open Money Stack products, broken out by layer
+  { name: "OMS Custodial Wallets", url: "https://docs.polygon.technology/api-reference/overview", description: "KYC'd customers, custodial wallets, and balances via the OMS API.", categories: ["custody"], tags: ["stablecoin", "global"] },
+  { name: "OMS Wallet SDK", url: "https://docs.polygon.technology/wallets/quickstart", description: "Non-custodial embedded wallets with email sign-in, branded as your app.", categories: ["custody"], tags: ["crypto", "global"] },
+  { name: "OMS Onramps & Offramps", url: "https://docs.polygon.technology/payments/onramps-offramps", description: "Card-funded pay-ins and crypto-to-fiat payouts with quotes and transactions.", categories: ["ramps", "payments"], tags: ["stablecoin", "global"] },
+  { name: "OMS Cash In", url: "https://docs.polygon.technology/api-reference/guide-cash-in", description: "In-person USD deposits at retail cash locations via deposit codes.", categories: ["ramps"], tags: ["fiat", "stablecoin", "US"] },
+  { name: "OMS Virtual Accounts", url: "https://docs.polygon.technology/oms/overview", description: "Named virtual accounts for recurring bank deposits, in early access.", categories: ["virtual-accounts"], tags: ["stablecoin", "US"] },
+  { name: "Trails", url: "https://trails.build", docs: "https://docs.polygon.technology/cross-chain", description: "Cross-chain payments, swaps, bridging, and deposits behind one API.", categories: ["swaps"], tags: ["crypto", "global"] },
+  { name: "Polygon Agentic Payments", url: "https://docs.polygon.technology/payment-services/agentic-payments/x402/guides/quickstart-buyers", description: "Machine-to-machine payments over HTTP using the x402 standard.", categories: ["payments"], tags: ["stablecoin", "global"] },
   { name: "BVNK", url: "https://bvnk.com", docs: "https://docs.bvnk.com", description: "Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.", categories: ["full-stack", "virtual-accounts", "ramps", "stablecoins"], tags: ["stablecoin", "EU", "UK", "global"] },
   { name: "Zero Hash", url: "https://zerohash.com", docs: "https://docs.zerohash.com", description: "Regulated crypto and stablecoin infrastructure: custody, trading, ramps, and payouts.", categories: ["full-stack", "custody", "ramps"], tags: ["crypto", "stablecoin", "US", "global"] },
   { name: "Rain", url: "https://rain.xyz", description: "Visa principal member issuing stablecoin-funded cards in 150+ countries; acquired Fern.", categories: ["full-stack", "cards"], tags: ["stablecoin", "US", "global"] },
