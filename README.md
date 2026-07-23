@@ -29,7 +29,6 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 
 > Vertically integrated platforms: accounts, ramps, compliance, cards, and settlement behind one API.
 
-- [Open Money Stack](https://polygon.technology) ([docs](https://docs.polygon.technology/oms/overview)) - Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.
 - [Altitude](https://altitude.xyz) - Self-custodial digital asset accounts with compliance, ramps, cards, and rewards.
 - [Bridge](https://bridge.xyz) ([docs](https://apidocs.bridge.xyz)) - Stablecoin orchestration and issuance, virtual accounts, and cards, from Stripe.
 - [BVNK](https://bvnk.com) ([docs](https://docs.bvnk.com)) - Stablecoin payment infrastructure with virtual accounts, wallets, and ramps.
@@ -38,6 +37,7 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Fern](https://fernhq.com) ([docs](https://docs.fernhq.com)) - Onramps, offramps, FX, and multi-currency accounts in one API; part of Rain.
 - [FV Bank](https://fvbank.us) - Licensed US bank with API banking, digital asset custody, and stablecoin payments.
 - [Mural Pay](https://muralpay.com) ([docs](https://developers.muralpay.com)) - Named USD and EUR virtual accounts, stablecoin payouts, and compliance APIs.
+- [Open Money Stack](https://polygon.technology) ([docs](https://docs.polygon.technology/oms/overview)) - Polygon's vertically integrated stack for global money movement: ramps, wallets, compliance, routing, and settlement in one API.
 - [Rain](https://rain.xyz) - Visa principal member issuing stablecoin-funded cards in 150+ countries; acquired Fern.
 - [Squads Grid](https://squads.xyz) ([docs](https://grid.squads.xyz)) - Stablecoin accounts, payments, cards, and yield APIs built on Solana.
 - [Stripe](https://stripe.com) - Payments platform with stablecoin accounts, card issuing, Bridge, and Privy.
