@@ -193,7 +193,7 @@ A curated catalog of the tools and services used to build a neobank, from full-s
 - [Mural Pay](https://muralpay.com) ([docs](https://developers.muralpay.com)) - Named USD and EUR virtual accounts, stablecoin payouts, and compliance APIs.
 - [Noah](https://noah.com) - Global accounts and stablecoin payment rails.
 - [Noxxo](https://noxxo.com) - Virtual account infrastructure.
-- [OMS Virtual Accounts](https://docs.polygon.technology/oms/overview) - Named virtual accounts for recurring bank deposits, in early access.
+- [OMS Virtual Accounts](https://docs.polygon.technology/oms/overview) - Named virtual accounts for recurring bank deposits.
 - [OpenPayd](https://openpayd.com) - Embedded finance platform with IBANs and payment rails.
 - [PhotonPay](https://photonpay.com) - Global accounts and card issuing from Hong Kong.
 - [Tazapay](https://tazapay.com) - Cross-border payments and collections across Asia-Pacific.
